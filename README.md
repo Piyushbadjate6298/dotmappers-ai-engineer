@@ -147,7 +147,21 @@ OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=qwen2.5:3b
 ```
 
+## Vercel Deployment
+
+1. Deploy this repository to Vercel. Vercel automatically detects the root `app.py` entry point (`from app.main import app`).
+2. Configure Environment Variables in the Vercel Project Dashboard:
+   - `LLM_PROVIDER`: `groq`
+   - `GROQ_API_KEY`: `<your-groq-api-key>`
+   - `GROQ_MODEL`: `openai/gpt-oss-20b`
+3. Key routes to verify after deployment:
+   - `/health` — System status and ticket count (works even if API key is unconfigured)
+   - `/stats` — Dataset summary
+   - `/docs` — Swagger API documentation
+   - `/ui/` — Interactive Gradio UI dashboard
+
 ## Run
+
 
 The API and UI start together with one command:
 

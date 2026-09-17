@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "app.py": {
+      "includeFiles": "data/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/app.py"
+    }
+  ]
+}

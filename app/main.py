@@ -1,6 +1,12 @@
 from __future__ import annotations
 
+import os
 from typing import Literal
+
+# Ensure Gradio runs cleanly in read-only serverless environments (Vercel)
+os.environ.setdefault("GRADIO_ANALYTICS_ENABLED", "False")
+os.environ.setdefault("TMPDIR", "/tmp")
+os.environ.setdefault("GRADIO_TEMP_DIR", "/tmp/gradio")
 
 import gradio as gr
 from fastapi import FastAPI, HTTPException, Query
